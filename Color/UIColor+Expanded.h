@@ -1,4 +1,4 @@
-// Erica Sadun 
+// Erica Sadun
 
 // Thanks to Poltras, Millenomi, Eridius, Nownot, WhatAHam, jberry,
 // and everyone else who helped out but whose name is inadvertantly omitted
@@ -17,16 +17,16 @@
  Current outstanding request list: (NONE)
  
  Requests recently added:
- Layton at PolarBearFarm - color descriptions 
-    e.g. ([UIColor warmGrayWithHintOfBlueTouchOfRedAndSplashOfYellowColor])
- Added: Auto color descriptions, especially using xkcd 
+ Layton at PolarBearFarm - color descriptions
+ e.g. ([UIColor warmGrayWithHintOfBlueTouchOfRedAndSplashOfYellowColor])
+ Added: Auto color descriptions, especially using xkcd
  
- Kevin / Eridius 
+ Kevin / Eridius
  UIColor needs a method that takes 2 colors and gives a third complementary one
  new kevinColorWithColor: method
-
+ 
  Adjustable colors: brighter, cooler, warmer, etc.
- Added: Various tweakers, warmth property, temperature stuff 
+ Added: Various tweakers, warmth property, temperature stuff
  */
 
 
@@ -35,11 +35,11 @@
 #define RGBCOLOR(_R_, _G_, _B_) [UIColor colorWithRed:(CGFloat)(_R_)/255.0f green: (CGFloat)(_G_)/255.0f blue: (CGFloat)(_B_)/255.0f alpha: 1.0f]
 
 // Color Space
-CGColorSpaceRef DeviceRGBSpace();
-CGColorSpaceRef DeviceGraySpace();
+OBJC_EXTERN CGColorSpaceRef DeviceRGBSpace();
+OBJC_EXTERN CGColorSpaceRef DeviceGraySpace();
 
-UIColor *RandomColor();
-UIColor *InterpolateColors(UIColor *c1, UIColor *c2, CGFloat percent);
+OBJC_EXTERN UIColor *RandomColor();
+OBJC_EXTERN UIColor *InterpolateColors(UIColor *c1, UIColor *c2, CGFloat percent);
 
 @interface UIColor (UIColor_Expanded)
 
@@ -57,12 +57,12 @@ UIColor *InterpolateColors(UIColor *c1, UIColor *c2, CGFloat percent);
 #pragma mark - Color Conversion
 + (void) hue:(CGFloat)h saturation:(CGFloat)s brightness:(CGFloat)v toRed:(CGFloat *)pR green:(CGFloat *)pG blue:(CGFloat *)pB;
 + (void) red:(CGFloat)r green:(CGFloat)g blue:(CGFloat)b toHue:(CGFloat *)pH saturation:(CGFloat *)pS brightness:(CGFloat *)pV;
-void RGB2YUV_f(CGFloat r, CGFloat g, CGFloat b, CGFloat *y, CGFloat *u, CGFloat *v);
-void YUV2RGB_f(CGFloat y, CGFloat u, CGFloat v, CGFloat *r, CGFloat *g, CGFloat *b);
+OBJC_EXTERN void RGB2YUV_f(CGFloat r, CGFloat g, CGFloat b, CGFloat *y, CGFloat *u, CGFloat *v);
+OBJC_EXTERN void YUV2RGB_f(CGFloat y, CGFloat u, CGFloat v, CGFloat *r, CGFloat *g, CGFloat *b);
 
 //  public domain functions by Darel Rex Finley, 2006
-void RGBtoHSP(CGFloat  R, CGFloat  G, CGFloat  B, CGFloat *H, CGFloat *S, CGFloat *P);
-void HSPtoRGB(CGFloat  H, CGFloat  S, CGFloat  P, CGFloat *R, CGFloat *G, CGFloat *B);
+OBJC_EXTERN void RGBtoHSP(CGFloat  R, CGFloat  G, CGFloat  B, CGFloat *H, CGFloat *S, CGFloat *P);
+OBJC_EXTERN void HSPtoRGB(CGFloat  H, CGFloat  S, CGFloat  P, CGFloat *R, CGFloat *G, CGFloat *B);
 @property (nonatomic, readonly) CGFloat perceivedBrightness;
 
 #pragma mark - Color Components
