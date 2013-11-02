@@ -496,8 +496,15 @@ void YUV2RGB_f(CGFloat y, CGFloat u, CGFloat v, CGFloat *r, CGFloat *g, CGFloat 
     NSAssert(self.canProvideRGBComponents, @"Must be a RGB color to use -luminance");
     
     CGFloat r, g, b;
-    if (![self getRed: &r green: &g blue: &b alpha:NULL])
-        return 0.0f;
+    if (![self getRed: &r green: &g blue: &b alpha:nil]) {
+        //white color?
+        if (![self getWhite:&r alpha:nil]) {
+            return 0.0f;
+        }
+        
+        g = r;
+        b = r;
+    }
     
     // http://en.wikipedia.org/wiki/Luma_(video)
     // Y = 0.2126 R + 0.7152 G + 0.0722 B
@@ -911,10 +918,26 @@ void YUV2RGB_f(CGFloat y, CGFloat u, CGFloat v, CGFloat *r, CGFloat *g, CGFloat 
     NSAssert(color.canProvideRGBComponents, @"Color must be a RGB color to use arithmatic operations");
     
     CGFloat r, g, b, a;
-    if (![self getRed:&r green:&g blue:&b alpha:&a]) return nil;
+    if (![self getRed: &r green: &g blue: &b alpha: &a]) {
+        //white color?
+        if (![self getWhite:&r alpha:&a]) {
+            return nil;
+        }
+        
+        g = r;
+        b = r;
+    }
     
     CGFloat r2,g2,b2,a2;
-    if (![color getRed:&r2 green:&g2 blue:&b2 alpha:&a2]) return nil;
+    if (![color getRed: &r2 green: &g2 blue: &b2 alpha: &a2]) {
+        //white color?
+        if (![color getWhite:&r2 alpha:&a2]) {
+            return nil;
+        }
+        
+        g2 = r2;
+        b2 = r2;
+    }
     
     CGFloat red = r + (fraction * (r2 - r));
     CGFloat green = g + (fraction * (g2 - g));
@@ -1166,8 +1189,15 @@ void HSPtoRGB(
     NSAssert(self.canProvideRGBComponents, @"Must be a RGB color to use -rgbHex");
     
     CGFloat r, g, b, a;
-    if (![self getRed: &r green: &g blue: &b alpha: &a])
-        return 0.0f;
+    if (![self getRed: &r green: &g blue: &b alpha: &a]) {
+        //white color?
+        if (![self getWhite:&r alpha:&a]) {
+            return 0.0f;
+        }
+        
+        g = r;
+        b = r;
+    }
     
     r = fmin(fmax(r, 0.0f), 1.0f);
     g = fmin(fmax(g, 0.0f), 1.0f);
