@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E01A20716FCA62B009C8E29 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E01A20316FCA62B009C8E29 /* UIColor+Expanded.m */; };
-		8E01A20816FCA62B009C8E29 /* Color-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E01A20616FCA62B009C8E29 /* Color-Utilities.m */; };
+		6B9A770F1847EC9D00AD7A88 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9A770E1847EC9D00AD7A88 /* Default-568h@2x.png */; };
+		6B9A77121847ECB400AD7A88 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A77111847ECB400AD7A88 /* UIColor+Expanded.m */; };
 		8EF624E115892BA600A81FD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF624E015892BA600A81FD2 /* UIKit.framework */; };
 		8EF624E315892BA600A81FD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF624E215892BA600A81FD2 /* Foundation.framework */; };
 		8EF624E515892BA600A81FD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF624E415892BA600A81FD2 /* CoreGraphics.framework */; };
@@ -17,10 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E01A20216FCA62B009C8E29 /* UIColor+Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expanded.h"; sourceTree = "<group>"; };
-		8E01A20316FCA62B009C8E29 /* UIColor+Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expanded.m"; sourceTree = "<group>"; };
-		8E01A20516FCA62B009C8E29 /* Color-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Color-Utilities.h"; sourceTree = "<group>"; };
-		8E01A20616FCA62B009C8E29 /* Color-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Color-Utilities.m"; sourceTree = "<group>"; };
+		6B9A770E1847EC9D00AD7A88 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6B9A77101847ECB400AD7A88 /* UIColor+Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Expanded.h"; path = "Color/UIColor+Expanded.h"; sourceTree = SOURCE_ROOT; };
+		6B9A77111847ECB400AD7A88 /* UIColor+Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Expanded.m"; path = "Color/UIColor+Expanded.m"; sourceTree = SOURCE_ROOT; };
 		8EF624DC15892BA600A81FD2 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF624E015892BA600A81FD2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8EF624E215892BA600A81FD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,7 +48,6 @@
 			isa = PBXGroup;
 			children = (
 				8E01A20116FCA62B009C8E29 /* UIColor+Expanded */,
-				8E01A20416FCA62B009C8E29 /* Util */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -57,24 +55,16 @@
 		8E01A20116FCA62B009C8E29 /* UIColor+Expanded */ = {
 			isa = PBXGroup;
 			children = (
-				8E01A20216FCA62B009C8E29 /* UIColor+Expanded.h */,
-				8E01A20316FCA62B009C8E29 /* UIColor+Expanded.m */,
+				6B9A77101847ECB400AD7A88 /* UIColor+Expanded.h */,
+				6B9A77111847ECB400AD7A88 /* UIColor+Expanded.m */,
 			);
 			path = "UIColor+Expanded";
-			sourceTree = "<group>";
-		};
-		8E01A20416FCA62B009C8E29 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				8E01A20516FCA62B009C8E29 /* Color-Utilities.h */,
-				8E01A20616FCA62B009C8E29 /* Color-Utilities.m */,
-			);
-			path = Util;
 			sourceTree = "<group>";
 		};
 		8EF624D115892BA600A81FD2 = {
 			isa = PBXGroup;
 			children = (
+				6B9A770E1847EC9D00AD7A88 /* Default-568h@2x.png */,
 				8EF624EC15892BA600A81FD2 /* main.m */,
 				8E01A20016FCA62B009C8E29 /* Color */,
 				8EF624E715892BA600A81FD2 /* Supporting Files */,
@@ -164,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EF624EB15892BA600A81FD2 /* InfoPlist.strings in Resources */,
+				6B9A770F1847EC9D00AD7A88 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EF624ED15892BA600A81FD2 /* main.m in Sources */,
-				8E01A20716FCA62B009C8E29 /* UIColor+Expanded.m in Sources */,
-				8E01A20816FCA62B009C8E29 /* Color-Utilities.m in Sources */,
+				6B9A77121847ECB400AD7A88 /* UIColor+Expanded.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +236,7 @@
 		8EF624F515892BA600A81FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
 				GCC_WARN_SHADOW = YES;
@@ -258,6 +249,7 @@
 		8EF624F615892BA600A81FD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
 				GCC_WARN_SHADOW = YES;
