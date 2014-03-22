@@ -713,7 +713,7 @@ void YUV2RGB_f(CGFloat y, CGFloat u, CGFloat v, CGFloat *r, CGFloat *g, CGFloat 
 - (BOOL) isEqualToColor: (UIColor *) anotherColor
 {
     CGFloat distance = [self distanceFrom:anotherColor];
-    return (distance < FLT_EPSILON);
+    return (distance < __FLT_EPSILON__);
 }
 
 #pragma mark Arithmetic operations
@@ -1375,7 +1375,7 @@ NSDictionary *kelvin = nil;
     {
         UIColor *color = [UIColor colorWithKelvin:i];
         NSString *hex = color.hexStringValue;
-        if (!dict[hex])
+        if (!dict[hex] && hex)
             dict[hex] = @(i);
     }
     
