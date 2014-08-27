@@ -35,8 +35,14 @@
 #define RGBCOLOR(_R_, _G_, _B_) [UIColor colorWithRed:(CGFloat)(_R_)/255.0f green: (CGFloat)(_G_)/255.0f blue: (CGFloat)(_B_)/255.0f alpha: 1.0f]
 
 // Color Space
+
+CF_IMPLICIT_BRIDGING_ENABLED
+
 OBJC_EXTERN CGColorSpaceRef DeviceRGBSpace();
 OBJC_EXTERN CGColorSpaceRef DeviceGraySpace();
+
+CF_IMPLICIT_BRIDGING_DISABLED
+
 
 OBJC_EXTERN UIColor *RandomColor();
 OBJC_EXTERN UIColor *InterpolateColors(UIColor *c1, UIColor *c2, CGFloat percent);
@@ -108,7 +114,7 @@ OBJC_EXTERN void HSPtoRGB(CGFloat  H, CGFloat  S, CGFloat  P, CGFloat *R, CGFloa
 - (NSArray *)arrayFromRGBAComponents;
 
 // Return a grey-scale representation of the color
-- (UIColor *) colorByLuminanceMapping;
+@property (nonatomic, readonly, copy) UIColor *colorByLuminanceMapping;
 
 #pragma mark - Alternative Expression
 @property (nonatomic, readonly) CGFloat colorfulness;
@@ -159,9 +165,9 @@ OBJC_EXTERN void HSPtoRGB(CGFloat  H, CGFloat  S, CGFloat  P, CGFloat *R, CGFloa
 - (UIColor *) colorWithHue: (CGFloat) hue;
 
 // Related colors
-- (UIColor *) contrastingColor;            // A good contrasting color: will be either black or white
-- (UIColor *) complementaryColor;        // A complementary color that should look good with this color
-- (NSArray *) triadicColors;                // Two colors that should look good with this color
+@property (nonatomic, readonly, copy) UIColor *contrastingColor;            // A good contrasting color: will be either black or white
+@property (nonatomic, readonly, copy) UIColor *complementaryColor;        // A complementary color that should look good with this color
+@property (nonatomic, readonly, copy) NSArray *triadicColors;                // Two colors that should look good with this color
 - (NSArray *) analogousColorsWithStepAngle: (CGFloat) stepAngle pairCount: (int)pairs;    // Multiple pairs of colors
 
 - (UIColor *) kevinColorWithColor: (UIColor *) secondColor; // see Eridius request
@@ -198,7 +204,7 @@ OBJC_EXTERN void HSPtoRGB(CGFloat  H, CGFloat  S, CGFloat  P, CGFloat *R, CGFloa
 
 - (NSString *) closestColorNameUsingDictionary: (NSString *) dictionaryName;
 
-- (NSDictionary *) closestColors;
+@property (nonatomic, readonly, copy) NSDictionary *closestColors;
 @property (nonatomic, readonly) NSString *closestColorName;
 @property (nonatomic, readonly) NSString *closestCrayonName;
 @property (nonatomic, readonly) NSString *closestWikipediaColorName;
