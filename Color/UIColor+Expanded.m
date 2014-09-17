@@ -1,23 +1,20 @@
 #import "UIColor+Expanded.h"
 
-CGColorSpaceRef DeviceRGBSpace()
-{
+CGColorSpaceRef DeviceRGBSpace() {
     static CGColorSpaceRef rgbSpace = NULL;
     if (rgbSpace == NULL)
         rgbSpace = CGColorSpaceCreateDeviceRGB();
     return rgbSpace;
 }
 
-CGColorSpaceRef DeviceGraySpace()
-{
+CGColorSpaceRef DeviceGraySpace(void) {
     static CGColorSpaceRef graySpace = NULL;
     if (graySpace == NULL)
         graySpace = CGColorSpaceCreateDeviceGray();
     return graySpace;
 }
 
-UIColor *RandomColor()
-{
+UIColor *RandomColor(void) {
     static BOOL seeded = NO;
     if (!seeded)
     {

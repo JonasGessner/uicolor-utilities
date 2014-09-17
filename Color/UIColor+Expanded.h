@@ -38,13 +38,13 @@
 
 CF_IMPLICIT_BRIDGING_ENABLED
 
-OBJC_EXTERN CGColorSpaceRef DeviceRGBSpace();
-OBJC_EXTERN CGColorSpaceRef DeviceGraySpace();
+OBJC_EXTERN CGColorSpaceRef DeviceRGBSpace(void);
+OBJC_EXTERN CGColorSpaceRef DeviceGraySpace(void);
 
 CF_IMPLICIT_BRIDGING_DISABLED
 
 
-OBJC_EXTERN UIColor *RandomColor();
+OBJC_EXTERN UIColor *RandomColor(void);
 OBJC_EXTERN UIColor *InterpolateColors(UIColor *c1, UIColor *c2, CGFloat percent);
 
 @interface UIColor (UIColor_Expanded)
